@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame"
+    tools:context=".TowerListFragment" >
+
+        <Button
+            android:id="@+id/btnRefreshList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/button_getTowers" />
+        <TextView
+            android:id="@+id/current_coords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current: Loading..."/>
+        <ListView
+            android:id="@+id/lvTowerList"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+        </ListView>
+
+</LinearLayout>
