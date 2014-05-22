@@ -51,11 +51,13 @@ public class CellQueryObject extends SignalQueryObject {
         if(neighCells != null){
             for(int i = 0; i < neighCells.size(); i++){
                 Log.e("JSON Parser", "Neighbours!");
-                CellInfoGsm cellInfo = (CellInfoGsm) neighCells.get(i);
-                CellTower newTower = new CellTower();
-                newTower.Name = String.valueOf(cellInfo.getCellIdentity());
-                towerMap.put(newTower.Name, newTower);
-                towerNames.add(newTower.Name);
+                if (neighCells.get(i) instanceof CellInfoGsm) {
+                    CellInfoGsm cellInfo = (CellInfoGsm) neighCells.get(i);
+                    CellTower newTower = new CellTower();
+                    newTower.Name = String.valueOf(cellInfo.getCellIdentity());
+                    towerMap.put(newTower.Name, newTower);
+                    towerNames.add(newTower.Name);
+                }
             }
         }
         if(resultsAdapter != null) {
